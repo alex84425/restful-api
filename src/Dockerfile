@@ -41,7 +41,7 @@ EXPOSE 5000
 
 ARG INCUBATOR_VER=unknown
 RUN git clone https://github.com/alex84425/restful-api.git
-CMD python python /restful-api/src/rest-api_sanic.py --root_path
+CMD python /restful-api/src/rest-api_sanic.py --root_path /
 
 # TO Run
 # docker build -t ubuntu1804

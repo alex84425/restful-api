@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  sanic: 
+    image: api
+    stdin_open: true
+    tty: true
+    working_dir: /
+    network_mode: "host"
