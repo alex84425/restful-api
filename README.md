@@ -19,12 +19,12 @@ Build restful-api to acess filesystem and support asyncio.
 git clone https://github.com/alex84425/restful-api.git
 ```
 * step 2:
-** option1 :
+  * option1 :
 ```
 pip install -r requirements.txt
 ```
 
-** option2 : get docker image by Dockerfile
+  * option2 : get docker image by Dockerfile
 ```
 cd src/
 docker build --build-arg INCUBATOR_VER=20160613.3  -t api ./
@@ -32,7 +32,7 @@ docker build --build-arg INCUBATOR_VER=20160613.3  -t api ./
 
 
 
-### Executing program
+# How to run:
 
 * basic instruction
 ```
@@ -49,7 +49,7 @@ optional arguments:
   --w [W]               worker num
 
 ```
-* How to run:
+
   * option 1: run locally
 ```
 python  src/rest-api_sanic.py --root_path /home/alex/workplace_alex/interview/api/ --port 5001 --w 1
@@ -68,20 +68,20 @@ docker-compose up
 # test unit test:
 
 ###  Request GET - if the request target is dir.
-GET existed dir
+* GET existed dir
 ```
 curl -i  "http://127.0.0.1:5000/restful-api/test_files/"
 ```
 ![image](https://user-images.githubusercontent.com/26201458/143234292-4db9c789-8f7c-4cad-9c8b-22b51350f2d9.png)
 
-GET existed dir with parameter
+* GET existed dir with parameter
 ```
 curl -i  "http://127.0.0.1:5000/restful-api/test_files/?orderby=fileName&orderByDirection=Descending&filterByName=char"
 ```
 ![image](https://user-images.githubusercontent.com/26201458/143230782-2777ccfa-03ed-4a99-acf8-833ea5a821aa.png)
 
 
-GET invaid dir
+* GET invaid dir
 ```
 curl -i  "http://127.0.0.1:5000/restful-api/test_files_invaild/"
 ```
@@ -90,13 +90,13 @@ curl -i  "http://127.0.0.1:5000/restful-api/test_files_invaild/"
 
 ###  Request GET - if the request target is file.
 
-GET existed file and return binary stream
+* GET existed file and return binary stream
 ```
 curl -i  "http://127.0.0.1:5000/restful-api/test_files/32char.txt"
 ```
 ![image](https://user-images.githubusercontent.com/26201458/143230997-f528382a-2d9b-4359-8023-fde402455eba.png)
 
-GET invaild file and return error
+* GET invaild file and return error
 ```
 curl -i  "http://127.0.0.1:5000/restful-api/test_files/fake.txt"
 ```
