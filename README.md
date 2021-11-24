@@ -1,6 +1,6 @@
 # Build restful-api using sanic and flask
 
-Simple overview of use/purpose.
+
 
 ## Description
 
@@ -12,19 +12,19 @@ Build restful-api to acess filesystem and support asyncio.
 
 * linux
 
-### Installing
+### How to install
 
 * step 1:
 ```
 git clone https://github.com/alex84425/restful-api.git
 ```
 * step 2:
-option1 :
+** option1 :
 ```
 pip install -r requirements.txt
 ```
 
-option2 : get docker image by Dockerfile
+** option2 : get docker image by Dockerfile
 ```
 cd src/
 docker build --build-arg INCUBATOR_VER=20160613.3  -t api ./
@@ -50,17 +50,17 @@ optional arguments:
 
 ```
 * How to run:
-option 1: run locally
+** option 1: run locally
 ```
 python  src/rest-api_sanic.py --root_path /home/alex/workplace_alex/interview/api/ --port 5001 --w 1
 ```
 
-option 2: run with docker
+** option 2: run with docker
 ```
 docker run -it --name sanic  --network host  api  python /restful-api/src/rest-api_sanic.py --root_path / --port 5000 --host "127.0.0.1"
 ```
 
-option 3: run with docker-compose, parameter such as port should be edited in Dockerfile before build image.
+** option 3: run with docker-compose, parameters such as port and host should be edited in Dockerfile before build image.
 ```
 docker-compose up
 ```
@@ -72,6 +72,7 @@ GET existed dir
 ```
 curl -i  "http://127.0.0.1:5000/restful-api/test_files/"
 ```
+![image](https://user-images.githubusercontent.com/26201458/143234292-4db9c789-8f7c-4cad-9c8b-22b51350f2d9.png)
 
 GET existed dir with parameter
 ```
@@ -86,8 +87,6 @@ curl -i  "http://127.0.0.1:5000/restful-api/test_files_invaild/"
 ```
 ![image](https://user-images.githubusercontent.com/26201458/143230619-61dd35d9-c76e-4431-90bc-71dd8bae5e5d.png)
 
-
-![image](https://user-images.githubusercontent.com/26201458/143230384-af8cabc2-e861-4917-a88a-d6f56c5650b1.png)
 
 ###  Request GET - if the request target is file.
 
