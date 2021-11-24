@@ -9,4 +9,4 @@ git commit -m "first commit"
 
 #git remove add origin git@github.com:
 git remote set-url origin https://github.com/alex84425/restful-api.git
-git push https://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@github.com/alex84425/restful-api.git
+git push https://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@github.com/alex84425/restful-api.git
