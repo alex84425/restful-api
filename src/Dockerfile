@@ -22,10 +22,20 @@ RUN python3.6 -m pip install flask
 RUN python3.6 -m pip install aiohttp
 RUN python3.6 -m pip install requests
 RUN python3.6 -m pip install asyncio
+RUN python3.6 -m pip install async-files==0.4
+
+#incluse asyncio and sanic
+RUN python3.6 -m pip install aiofiles
+RUN python3.6 -m pip install sanic
+RUN python3.6 -m pip install sanic_restful_api
+RUN python3.6 -m pip install async_files
+
 
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git
+
+RUN git clone https://github.com/alex84425/restful-api.git
 
 # TO Run
 # docker build -t ubuntu1804
