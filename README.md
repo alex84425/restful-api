@@ -50,17 +50,17 @@ optional arguments:
 
 ```
 * How to run:
-** option 1: run locally
+  * option 1: run locally
 ```
 python  src/rest-api_sanic.py --root_path /home/alex/workplace_alex/interview/api/ --port 5001 --w 1
 ```
 
-** option 2: run with docker
+  * option 2: run with docker
 ```
 docker run -it --name sanic  --network host  api  python /restful-api/src/rest-api_sanic.py --root_path / --port 5000 --host "127.0.0.1"
 ```
 
-** option 3: run with docker-compose, parameters such as port and host should be edited in Dockerfile before build image.
+  * option 3: run with docker-compose, parameters such as port and host should be edited in Dockerfile before build image.
 ```
 docker-compose up
 ```
