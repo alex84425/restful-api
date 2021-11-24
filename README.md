@@ -117,17 +117,21 @@ DEL single file
 ```
 #check
 curl  -X POST -F "file=@/home/alex/workplace_alex/interview/api/test_files/test_upload/upload.txt"  "http://127.0.0.1:5000/restful-api/test_files/test_DEL/"
-curl -i  "http://127.0.0.1:5000/restful-api/test_files/test_DEL/
-curl  -X DELETE  "http://127.0.0.1:5000/restful-api/test_files/test_files/test_DEL/upload.txt"
+curl -i  "http://127.0.0.1:5000/restful-api/test_files/test_DEL/"
+curl  -X DELETE  "http://127.0.0.1:5000/restful-api/test_files/test_DEL/upload.txt"
 curl -i  "http://127.0.0.1:5000/restful-api/test_files/test_DEL/"
 ```
+![image](https://user-images.githubusercontent.com/26201458/143240357-b7178edb-b923-451b-bacb-9760c11a17fb.png)
+
 DEL single dir
 ```
-curl -i  "http://127.0.0.1:5000/restful-api/test_files/test_DEL/
-curl  -X DELETE  "http://127.0.0.1:5000/restful-api/test_files/test_files/test_DEL/"
+curl  -X POST -F "file=@/home/alex/workplace_alex/interview/api/test_files/test_upload/upload.txt"  "http://127.0.0.1:5000/restful-api/test_files/test_DEL/"
+curl -i  "http://127.0.0.1:5000/restful-api/test_files/test_DEL/"
+curl  -X DELETE  "http://127.0.0.1:5000/restful-api/test_files/test_DEL/"
 curl -i  "http://127.0.0.1:5000/restful-api/test_files/test_DEL/"
 ```
 
+![image](https://user-images.githubusercontent.com/26201458/143240737-18f62796-700d-4a2c-9c7b-5d45d12d4ade.png)
 
 
 ## Help
