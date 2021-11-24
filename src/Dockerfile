@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y software-properties-common && add-apt-r
 RUN ln -sfn /usr/bin/python3.6 /usr/bin/python3 && ln -sfn /usr/bin/python3 /usr/bin/python && ln -sfn /usr/bin/pip3 /usr/bin/pip
 
 RUN apt-get update
+RUN apt-get install -y vim
 RUN apt-get install -y build-essential
 RUN apt-get install -y curl
 # This will install Python, pip, pip3, and pip3.6.
@@ -13,6 +14,7 @@ RUN apt-get install -y curl
 RUN curl https://bootstrap.pypa.io/ez_setup.py -o - | python3.6 && python3.6 -m easy_install pip
 RUN apt-get update
 RUN apt-get install -y python3.6-venv
+RUN apt-get install htop
 
 # Inorder to run pip3.6, run it the following way `python3.6 -m pip`
 # Update Python & Install wheel
@@ -35,7 +37,11 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git
 
+EXPOSE 5000
+
+ARG INCUBATOR_VER=unknown
 RUN git clone https://github.com/alex84425/restful-api.git
+CMD python python /restful-api/src/rest-api_sanic.py --root_path
 
 # TO Run
 # docker build -t ubuntu1804

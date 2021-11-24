@@ -193,7 +193,7 @@ if __name__ == '__main__':
 	parser.add_argument('-d', '--debug', dest='debug', action='store_true', help='Run in debug mode.')
 	parser.add_argument('--host', action='store', nargs='?', help='Host to bind to.',default = "127.0.0.1")
 	parser.add_argument('--port', action='store', type=int, nargs='?', help='Port to listen on.',default = "5000")
-	parser.add_argument('--w', action='store', type=int, nargs='?', help='worker num',default = "1000")
+	parser.add_argument('--w', action='store', type=int, nargs='?', help='worker num',default = "1")
 	#import multiprocessing
 	#workers = multiprocessing.cpu_count()
 	#app.run(..., workers=workers)
@@ -202,6 +202,7 @@ if __name__ == '__main__':
 	if args.root_path is not None:
 		path = args.root_path
 	#app.run(host='127.0.0.1', debug=True,port=5000)
+	print("path:",path)
 	app.run( host=args.host, port=args.port, debug=args.debug, workers = args.w)
 
 
