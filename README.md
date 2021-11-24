@@ -103,14 +103,17 @@ curl -i  "http://127.0.0.1:5000/restful-api/test_files/fake.txt"
 ```
 ![image](https://user-images.githubusercontent.com/26201458/143231058-f10f4bd7-3c40-46eb-ac1b-1632d505a73f.png)
 
-###  Request POST - target should be dir with key[file].
+###  Request POST - target should be dir with key[file], if file existed not allow to operate.
 ```
 curl  -X POST -F "file=@/home/alex/workplace_alex/interview/api/test_files/test_upload/upload.txt"  "http://127.0.0.1:5000/restful-api/test_files/test_upload/"
 ```
+###  Request PATCH - target should be dir with key[file], only allow to operate with existed file.
+```
+curl  -X PATCH -F "file=@/home/alex/workplace_alex/interview/api/test_files/test_upload/upload.txt"  "http://127.0.0.1:5000/restful-api/test_files/test_upload/"
+```
+
 ![image](https://user-images.githubusercontent.com/26201458/143231591-a9e90b65-73e0-4538-a1fe-2f1090e8a24b.png)
 ###  Request DELETE - remove target file or dir
-
-
 ```
 curl  -X DELETE  "http://127.0.0.1:5000/restful-api/test_files/test_upload/upload.txt"
 curl  -X DELETE  "http://127.0.0.1:5000/restful-api/test_files/test_upload/"
