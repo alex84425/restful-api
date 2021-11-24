@@ -62,7 +62,7 @@ async def post_files(request, target: str):
 	full_path = path +  target
 	print(full_path)
 
-	if  not os.path.isdir(full_path ):
+	if   os.path.isfile(full_path ):
 		return json( {"error:":"'target is a file, not a directory"} )
 	app.config['UPLOAD_FOLDER'] = full_path
 
